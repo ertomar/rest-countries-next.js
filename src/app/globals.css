@@ -11,3 +11,10 @@
 .main-layout {
   padding: 0 1rem 1rem;
 }
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
