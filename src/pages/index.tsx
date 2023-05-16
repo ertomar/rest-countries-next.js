@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 
 import { CountryCard } from '@/components';
 import RootLayout from '@/app/layout';
+import Loading from '@/app/Loading';
 
 import styles from './index.module.css';
 
@@ -64,6 +65,10 @@ const Home: React.FC<IHome> = ({ data: countries }) => {
       />
     );
   });
+
+  if (router.isFallback) {
+    return <Loading />;
+  }
 
   return (
     <RootLayout>
