@@ -1,4 +1,7 @@
+import { useCallback } from 'react';
+
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import { Label } from '@/components';
 import { ICountry } from '@/pages';
@@ -22,6 +25,7 @@ const BorderingCountries: React.FC<BorderingCountriesProps> = ({
       <BorderingCountryCard
         key={commonName}
         countryName={commonName}
+        officialName={name.official}
         flag={flag}
         population={populationStr}
       />
@@ -47,9 +51,16 @@ const BorderingCountryCard: React.FC<{
   countryName: string;
   flag: string;
   population: string;
-}> = ({ countryName, flag, population }) => {
+  officialName: string;
+}> = ({ countryName, flag, population, officialName }) => {
+  const router = useRouter();
+
+  const onCountryClick = useCallback(() => {
+    router.push(`/country/${encodeURIComponent(officialName)}`);
+  }, [officialName, router]);
+
   return (
-    <div className={styles.borderingCard}>
+    <div className={styles.borderingCard} onClick={onCountryClick}>
       <div className={styles.borderingFlagContainer}>
         <Image
           height={100}

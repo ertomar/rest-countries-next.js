@@ -37,6 +37,7 @@
 
 .borderingCard {
   flex-basis: 20%;
+  cursor: pointer;
 }
 
 .borderingCountriesContainer {
