@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Countries App Application
 
-## Getting Started
+This is a simple application using Nextjs and typescript that allows users to log in and view a list of Countries and check their details.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+A demo of the application can be found here: [https://codesandbox.io/p/github/ertomar/rest-countries-next.js/main?layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522panelType%2522%253A%2522TABS%2522%252C%2522id%2522%253A%2522clhs1widx000a3b6nu9kutsxz%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522panelType%2522%253A%2522TABS%2522%252C%2522id%2522%253A%2522clhs1widx000c3b6nz196cipy%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522clhs1widx000a3b6nu9kutsxz%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clhs1widx00093b6n75ptle2g%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252FREADME.md%2522%257D%255D%252C%2522id%2522%253A%2522clhs1widx000a3b6nu9kutsxz%2522%252C%2522activeTabId%2522%253A%2522clhs1widx00093b6n75ptle2g%2522%257D%252C%2522clhs1widx000c3b6nz196cipy%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clhs1widx000b3b6nlbubxkmc%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%257D%255D%252C%2522id%2522%253A%2522clhs1widx000c3b6nz196cipy%2522%252C%2522activeTabId%2522%253A%2522clhs1widx000b3b6nlbubxkmc%2522%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D](SandBox)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To install the application, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Yarn
 
-## Learn More
+1. Clone the repository to your local machine
+2. Navigate to the root directory of the project in your terminal
+3. Run `yarn install` to install the required dependencies
+4. Run `yarn dev` to start the development server
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once the application is installed and running, you can access it by opening your web browser and navigating to http://localhost:3000. From there, you will be able to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Check the list of countries
+- Check the details of a country by clicking on the country card
 
-## Deploy on Vercel
+## Testing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This application includes unit and E2E tests. To run the tests, simply run `yarn test` and `yarn cypress` in your terminal.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Improvements
+
+With more time and resources, some possible improvements to this application could include:
+
+- Create a library for the shared components between App modules in a separate package. This would allow for easy reuse of components in other projects and reduce code duplication.
+- Provide a design system with design tokens and variants to match the same tokens in the UI design(Figma, adobeXd, etc).
+- Create a library for the shared logic between App modules in a separate package.
+- Create environment variables files with different environments(development, staging and production).
+- Use GitHub Actions for continuous integration and deployment. This would allow for automated testing, building, and deployment of the application in a streamlined and efficient manner.
+- Add more linter and formatter rules to the project to ensure code consistency and quality.
+- Add more unit and E2E tests to ensure the application is working as expected.
+- Add more documentation to the project to make it easier for other developers to understand and contribute to the project.
+- Add a Dockerfile to the project to make it easier to deploy the application to different environments.
