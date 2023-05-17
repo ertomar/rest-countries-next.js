@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country Details renders CountryDetails unchanged 1`] = `
+<div>
+  <main
+    class="main-layout"
+  >
+    <h1
+      class="headline"
+    >
+      Countries App
+    </h1>
+    <button
+      class="button"
+      style="color: white;"
+    >
+      &lt; back
+    </button>
+    <section
+      class="CountryDetailsContainer"
+    >
+      <div
+        class="imageContainer"
+      >
+        <img
+          alt="Flag image"
+          class="flagImage"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          src=""
+          style="color: transparent;"
+          width="100"
+        />
+      </div>
+      <div
+        class="infoCard"
+      >
+        <h3
+          style="color: rgb(0, 0, 0);"
+        />
+        <h3
+          style="color: rgb(0, 0, 0);"
+        >
+          Capital: 
+          No Capital Provided
+        </h3>
+        <h3
+          style="color: rgb(0, 0, 0);"
+        >
+          Population: 
+        </h3>
+        <h3
+          style="color: rgb(0, 0, 0);"
+        >
+          Currency: 
+          No Currency Provided
+        </h3>
+        <h3
+          style="color: rgb(0, 0, 0);"
+        >
+          Languages: 
+        </h3>
+      </div>
+      <div
+        class="borderingCountries"
+      >
+        <h2
+          style="color: rgb(0, 0, 0);"
+        >
+          Bordering Countries
+        </h2>
+        <div
+          class="borderingEmptyState"
+        >
+          <p
+            style="color: rgb(0, 0, 0);"
+          >
+            No bordering countries
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+`;
