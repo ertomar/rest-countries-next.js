@@ -38,9 +38,11 @@ const CountryInfo: React.FC<ICountryInfo> = ({
 
   return (
     <RootLayout>
-      <Button onClick={onBackButtonClick} variant="primary">
-        &lt; back
-      </Button>
+      <div className={styles.backButtonContainer}>
+        <Button onClick={onBackButtonClick} variant="primary">
+          &lt; back
+        </Button>
+      </div>
       <section className={styles.CountryDetailsContainer}>
         <div className={styles.imageContainer}>
           <Image
