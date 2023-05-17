@@ -18,33 +18,43 @@ const CountryCard: React.FC<ICountryCard> = (props) => {
 
   return (
     <Card className={styles.container} onClick={onClick}>
-      <Label as="h2" className={styles.countryFloatingLabel} variant="primary">
-        {title}
-      </Label>
-      <div className={styles.imageContainer}>
-        <Image
-          height={100}
-          width={100}
-          src={flag}
-          alt={name}
-          className={styles.countryImage}
-          priority={false}
-        />
-        <div>
-          <InfoLabel>Official Name: {name}</InfoLabel>
-          <InfoLabel>Capital: {capital}</InfoLabel>
+      <div className="country-card">
+        <Label
+          as="h2"
+          className={styles.countryFloatingLabel}
+          variant="primary"
+          id="countryCardTitle"
+        >
+          {title}
+        </Label>
+        <div className={styles.imageContainer}>
+          <Image
+            height={100}
+            width={100}
+            src={flag}
+            alt={name}
+            className={styles.countryImage}
+            priority={false}
+          />
+          <div>
+            <InfoLabel id="countryName">Official Name: {name}</InfoLabel>
+            <InfoLabel id="countryCapital">Capital: {capital}</InfoLabel>
+          </div>
         </div>
+        <InfoLabel id="countryPopulation">
+          Population: {population.toLocaleString()}
+        </InfoLabel>
       </div>
-      <InfoLabel>Population: {population.toLocaleString()}</InfoLabel>
     </Card>
   );
 };
 
 const InfoLabel: React.FC<{
   children: React.ReactNode;
-}> = ({ children }) => {
+  id: string;
+}> = ({ children, id }) => {
   return (
-    <Label as="h3" className={styles.infoLabel}>
+    <Label as="h3" className={styles.infoLabel} id={id}>
       {children}
     </Label>
   );

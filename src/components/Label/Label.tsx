@@ -11,10 +11,11 @@ export interface ILabel {
   as?: keyof JSX.IntrinsicElements;
   styles?: React.CSSProperties;
   className?: string;
+  id?: string;
 }
 
 const Label: React.FC<ILabel> = (props) => {
-  const { children, variant, as = 'label', styles, className } = props;
+  const { children, variant, as = 'label', styles, className, id } = props;
 
   const variantStyle = labelVariants[variant ?? 'black'];
   const labelStyles = { ...variantStyle, ...styles };
@@ -22,7 +23,7 @@ const Label: React.FC<ILabel> = (props) => {
   const Component = as;
 
   return (
-    <Component style={labelStyles} className={className}>
+    <Component style={labelStyles} className={className} id={id}>
       {children}
     </Component>
   );
