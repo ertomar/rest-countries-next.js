@@ -29,7 +29,7 @@ const CountryInfo: React.FC<ICountryInfo> = ({
   const router = useRouter();
 
   const onBackButtonClick = () => {
-    router.back();
+    router.push('/');
   };
 
   if (router.isFallback) {
@@ -47,18 +47,18 @@ const CountryInfo: React.FC<ICountryInfo> = ({
             height={100}
             width={100}
             src={countryFlag}
-            alt={country?.name?.common}
+            alt={country?.name?.common || 'Flag image'}
             className={styles.flagImage}
             priority={false}
           />
         </div>
         <div className={styles.infoCard}>
-          <Label as="h3">{country.name.official}</Label>
+          <Label as="h3">{country?.name?.official}</Label>
           <Label as="h3">
             Capital: {country?.capital?.[0] || 'No Capital Provided'}
           </Label>
           <Label as="h3">
-            Population: {country.population.toLocaleString()}
+            Population: {country?.population?.toLocaleString()}
           </Label>
           <Label as="h3">
             Currency: {countryCurrency || 'No Currency Provided'}

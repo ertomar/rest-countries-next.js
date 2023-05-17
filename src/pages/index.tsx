@@ -45,7 +45,7 @@ const Home: React.FC<IHome> = ({ data: countries }) => {
     [router]
   );
 
-  const countriesCards = countries.map((country) => {
+  const countriesCards = (countries || [])?.map((country) => {
     const { name, capital, population, flags } = country;
     const commonName = name.common;
     const officialName = name.official;
