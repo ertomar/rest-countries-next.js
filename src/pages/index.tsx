@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 
-import { CountryCard } from '@/components';
+import { CountryCard, Label } from '@/components';
 import RootLayout from '@/app/layout';
 import Loading from '@/app/Loading';
 
@@ -70,10 +70,23 @@ const Home: React.FC<IHome> = ({ data: countries }) => {
     return <Loading />;
   }
 
+  const emptyState = countriesCards.length === 0 ? <EmptyState /> : null;
+
   return (
     <RootLayout>
       <div className={styles.countriesContainer}>{countriesCards}</div>
+      {emptyState}
     </RootLayout>
+  );
+};
+
+const EmptyState: React.FC = () => {
+  return (
+    <div className={styles.emptyStateContainer}>
+      <Label as="h3" variant="primary">
+        No Countries Found
+      </Label>
+    </div>
   );
 };
 
@@ -88,13 +101,17 @@ export const getServerSideProps: GetServerSideProps<{
     'flags',
   ];
 
-  const res = await fetch(
-    `https://restcountries.com/v3.1/all?fields=${selectedFields.join(',')}`
-  );
+  try {
+    const res = await fetch(
+      `https://restcountries.com/v3.1/all?fields=${selectedFields.join(',')}`
+    );
 
-  const data = await res.json();
+    const data = res.status === 200 ? await res.json() : [];
 
-  return { props: { data } };
+    return { props: { data } };
+  } catch (error) {
+    return { props: { data: [] } };
+  }
 };
 
 export default Home;

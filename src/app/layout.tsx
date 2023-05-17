@@ -5,6 +5,7 @@ import { Label } from '@/components';
 
 import './globals.css';
 import Loading from './Loading';
+import ErrorBoundary from './ErrorBoundary';
 
 export interface IPrimaryLayout {
   children: React.ReactNode;
@@ -21,12 +22,14 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
           key="desc"
         />
       </Head>
-      <main className="main-layout">
-        <Label as="h1" className="headline" variant="primary">
-          Countries App
-        </Label>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
-      </main>
+      <ErrorBoundary>
+        <main className="main-layout">
+          <Label as="h1" className="headline" variant="primary">
+            Countries App
+          </Label>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </main>
+      </ErrorBoundary>
     </>
   );
 };

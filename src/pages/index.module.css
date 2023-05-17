@@ -6,3 +6,12 @@
   gap: 3rem;
   padding: 0 1rem;
 }
+
+.emptyStateContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+}
