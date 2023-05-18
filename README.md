@@ -41,3 +41,4 @@ With more time and resources, some possible improvements to this application cou
 - Add more unit and E2E tests to ensure the application is working as expected.
 - Add more documentation to the project to make it easier for other developers to understand and contribute to the project.
 - Add a Dockerfile to the project to make it easier to deploy the application to different environments.
+- Paginate home page countries list to reduce home page bundle size and provide better user experience. 
